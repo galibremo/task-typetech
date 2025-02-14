@@ -46,7 +46,8 @@ export default function page() {
             <p className="text-center mt-1 lg:mt-4 text-sm lg:text-[15.5px] font-light">
               your specialists in residential and commercial properties. From
               dream homes to prime business spaces, trust our <br /> unique
-              expertise to guide you in Miami/South Florida's dynamic market.
+              expertise to guide you in Miami/South Florida&rsquo;s dynamic
+              market.
             </p>
           </div>
         </div>
