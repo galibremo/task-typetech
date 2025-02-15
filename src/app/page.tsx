@@ -31,9 +31,12 @@ export default function page() {
           </div>
         </div>
       </section>
-      <section className="w-full mt-5 sm:mt-16 h-[3722px]">
+      <section className="w-full mt-5 sm:mt-16 h-[1722px]">
         <CountryHeading title={"Broward Country"} />
-        <CountryHeading title={"Miami Dade Country"} />
+        <CountryHeading
+          title={"Miami Dade Country"}
+          isInitiallyExpanded={true}
+        />
         <CountryHeading title={"Broward Country"} />
         <CountryHeading title={"Monroe Country"} />
       </section>

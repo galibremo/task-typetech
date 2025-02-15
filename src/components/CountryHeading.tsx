@@ -18,8 +18,14 @@ export interface CountryItem {
   link: string;
 }
 
-const CountryHeading = ({ title }: { title: string }) => {
-  const [activeAcordeon, setActiveAcordeon] = useState(false);
+const CountryHeading = ({
+  title,
+  isInitiallyExpanded = false,
+}: {
+  title: string;
+  isInitiallyExpanded?: boolean;
+}) => {
+  const [activeAcordeon, setActiveAcordeon] = useState(isInitiallyExpanded);
 
   const accordionVariants = {
     initial: {

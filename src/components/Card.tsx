@@ -15,7 +15,7 @@ const Card: React.FC<CardProps> = ({ countryItems }) => {
           countryItems.map((item) => (
             <div
               key={item.id}
-              className="w-full max-w-[350px] h-[298px] rounded-[20px] bg-[#F3F3F3]/30 flex flex-col items-center justify-center border-[2px] border-[#F3F3F3]"
+              className="w-full max-w-[350px] h-[298px] rounded-[20px] bg-[#F3F3F3]/30 flex flex-col items-center justify-center border-[2px] border-[#F3F3F3]  hover:text-[#FF5A3C] hover:bg-[#F3F3F3]/70 transition-colors delay-200"
             >
               <Image
                 src={item.link}
