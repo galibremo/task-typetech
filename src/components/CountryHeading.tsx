@@ -32,15 +32,25 @@ const CountryHeading = ({ title }: { title: string }) => {
       transition: {
         height: {
           type: "spring",
-          damping: 25,
+          damping: 30,
           stiffness: 100,
           duration: 0.5,
         },
+        opacity: { duration: 0.6, ease: "easeOut" },
       },
     },
     exit: {
       height: 0,
       opacity: 0,
+      transition: {
+        height: {
+          type: "spring",
+          damping: 20,
+          stiffness: 100,
+          duration: 0.5,
+        },
+        opacity: { duration: 0.6, ease: "easeIn" },
+      },
     },
   };
 
