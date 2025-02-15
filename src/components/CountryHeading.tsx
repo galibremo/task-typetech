@@ -21,6 +21,29 @@ export interface CountryItem {
 const CountryHeading = ({ title }: { title: string }) => {
   const [activeAcordeon, setActiveAcordeon] = useState(false);
 
+  const accordionVariants = {
+    initial: {
+      height: 0,
+      opacity: 0,
+    },
+    animate: {
+      height: "auto",
+      opacity: 1,
+      transition: {
+        height: {
+          type: "spring",
+          damping: 25,
+          stiffness: 100,
+          duration: 0.5,
+        },
+      },
+    },
+    exit: {
+      height: 0,
+      opacity: 0,
+    },
+  };
+
   const countryItems: CountryItem[] = [
     { id: 1, title: "Miami-Dade County", link: "/Miami-Dade-County.jpg" },
     { id: 2, title: "Brickell", link: "/Brickell.jpg" },
@@ -35,9 +58,9 @@ const CountryHeading = ({ title }: { title: string }) => {
     { id: 11, title: "Dorai Central Park", link: "/Dorai-Central-Park.jpg" },
   ];
   return (
-    <div className="mb-5 sm:mb-10 max-w-6xl mx-auto px-5">
-      <div className="mb-5">
-        <div className="flex items-center justify-between pt-5 px-5 pb-5">
+    <div className="max-w-6xl mx-auto px-5">
+      <div>
+        <div className="flex items-center justify-between pt-5 px-5">
           <div className="text-lg sm:text-2xl font-bold">{title}</div>
           <div className="flex items-center gap-6">
             <AnimatePresence>
@@ -124,20 +147,15 @@ const CountryHeading = ({ title }: { title: string }) => {
             </motion.div>
           )}
         </AnimatePresence>
-        <Separator />
+        <Separator className="my-6" />
       </div>
       <AnimatePresence>
         {activeAcordeon && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{
-              type: "tween",
-              damping: 15,
-              stiffness: 100,
-              opacity: { duration: 0.3 },
-            }}
+            variants={accordionVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
           >
             <Card countryItems={countryItems} />
           </motion.div>
